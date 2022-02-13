@@ -1,68 +1,38 @@
-# Tiles web part
+# react-tiles
 
-This web part provides you the ability to add a per instance listing of tiled links. Tiles are stored as a collection of tiles within the web part's properties, removing the need for link storage within SharePoint lists, tenant properties, or other external link storage requirements.
+## Summary
 
-Icons are from Office UI Fabric.
+Short summary on functionality and used technologies.
 
-![Tiles](../../assets/images/components/part-tiles.gif)
-
-## How to use this web part on your web pages
-
-1. Place the page you want to add this web part to in edit mode.
-2. Search for and insert the **Tiles** web part.
-3. Configure the web part to update its properties.
-
-## Configurable Properties
-
-The `Tiles` web part can be configured with the following properties:
-
-| Label | Property | Type | Required | Description |
-| ---- | ---- | ---- | ---- | ---- |
-| Useful Tools | title | string | no | The web part title, editable inline with the web part itself |
-| Specify the height of the tiles | tileHeight | number | no | Default: 200, the height in pixels of each tile |
-| Tile data | collectionData | collection | no | Collection of tiles |
-
-### collectionData Collection Properties
-
-Configurable properties for each tile row within the `collectionData` collection:
-
-| Label | Property | Type | Required | Description |
-| ---- | ---- | ---- | ---- | ---- |
-| Title | title | string | yes | The text / title of the tile |
-| Description | description | string | no | Optional tile description |
-| URL | url | string | yes | The tile link url |
-| UI Fabric icon name | icon | fabricIcon | no | Optional UI Fabric icon name |
-| Target | target | dropdown | no | Optional target for this link, current or new window |
+[picture of the solution in action, if possible]
 
 ## Used SharePoint Framework Version
 
-![drop](https://img.shields.io/badge/version-1.4-green.svg)
-
-* Works also at SharePoint 2019
+![version](https://img.shields.io/badge/version-1.13-green.svg)
 
 ## Applies to
 
-* [SharePoint Framework](https:/dev.office.com/sharepoint)
-* [Office 365 tenant](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)
-* [SharePoint 2019](https://docs.microsoft.com/en-us/sharepoint/dev/general-development/sharepoint-2019-development-platform)
+- [SharePoint Framework](https://aka.ms/spfx)
+- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+
+> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
 ## Prerequisites
 
-none
+> Any special pre-requisites?
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-react-tiles V1 | Elio Struyf (@estruyf)
-react-tiles V2 | Fabio Franzini (@fabiofranzini)
+folder name | Author details (name, company, twitter alias with link)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.0|April 13th, 2018|Initial release
-2.0|January 24, 2020|Initial release (extract web part from Starter Kit v1)
+1.1|March 10, 2021|Update comment
+1.0|January 29, 2021|Initial release
 
 ## Disclaimer
 
@@ -72,19 +42,32 @@ Version|Date|Comments
 
 ## Minimal Path to Awesome
 
-* Clone this repository
-* Move to solution folder
-* in the command line run:
-  * `npm install`
-  * `gulp serve`
+- Clone this repository
+- Ensure that you are at the solution folder
+- in the command-line run:
+  - **npm install**
+  - **gulp serve**
 
 > Include any additional steps as needed.
 
 ## Features
 
-Description of the web part with possible additional details than in short summary. 
-This Web Part illustrates the following concepts on top of the SharePoint Framework:
+Description of the extension that expands upon high-level summary above.
 
-* PnP property control usage
+This extension illustrates the following concepts:
 
-<img src="https://telemetry.sharepointpnp.com/sp-starter-kit/source/react-tiles" />
+- topic 1
+- topic 2
+- topic 3
+
+> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
+
+> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+
+## References
+
+- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
+- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
+- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
+- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development

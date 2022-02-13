@@ -1,10 +1,12 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
+import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import {
-  BaseClientSideWebPart,
-  IPropertyPaneConfiguration
-} from '@microsoft/sp-webpart-base';
+  IPropertyPaneConfiguration,
+  PropertyPaneTextField
+} from '@microsoft/sp-property-pane';
+import { IReadonlyTheme } from '@microsoft/sp-component-base';
 
 import * as strings from 'TilesWebPartStrings';
 import { ITilesProps } from './components/ITilesProps';
@@ -19,6 +21,9 @@ export interface ITilesWebPartProps {
 
 export default class TilesWebPart extends BaseClientSideWebPart<ITilesWebPartProps> {
 
+  private _isDarkTheme: boolean = false;
+  private _environmentMessage: string = '';
+
   // Just for suppress the tslint validation of dinamically loading of this field by using loadPropertyPaneResources()
   // tslint:disable-next-line: no-any
   private propertyFieldNumber: any;
@@ -28,6 +33,11 @@ export default class TilesWebPart extends BaseClientSideWebPart<ITilesWebPartPro
   // Just for suppress the tslint validation of dinamically loading of this field by using loadPropertyPaneResources()
   // tslint:disable-next-line: no-any
   private customCollectionFieldType: any;
+
+  protected onInit(): Promise<void> {
+    this._environmentMessage = this._getEnvironmentMessage();
+    return super.onInit();
+  }
 
   public render(): void {
     const element: React.ReactElement<ITilesProps> = React.createElement(
@@ -45,6 +55,33 @@ export default class TilesWebPart extends BaseClientSideWebPart<ITilesWebPartPro
     );
 
     ReactDom.render(element, this.domElement);
+  }
+
+  private _getEnvironmentMessage(): string {
+    if (!!this.context.sdks.microsoftTeams) { // running in Teams
+      return this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentTeams : strings.AppTeamsTabEnvironment;
+    }
+
+    return this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentSharePoint : strings.AppSharePointEnvironment;
+  }
+
+  protected onThemeChanged(currentTheme: IReadonlyTheme | undefined): void {
+    if (!currentTheme) {
+      return;
+    }
+
+    this._isDarkTheme = !!currentTheme.isInverted;
+    const {
+      semanticColors
+    } = currentTheme;
+    this.domElement.style.setProperty('--bodyText', semanticColors.bodyText);
+    this.domElement.style.setProperty('--link', semanticColors.link);
+    this.domElement.style.setProperty('--linkHovered', semanticColors.linkHovered);
+
+  }
+
+  protected onDispose(): void {
+    ReactDom.unmountComponentAtNode(this.domElement);
   }
 
   protected get dataVersion(): Version {

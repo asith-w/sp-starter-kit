@@ -1,5 +1,12 @@
 declare interface ITilesWebPartStrings {
   PropertyPaneDescription: string;
+  BasicGroupName: string;
+  DescriptionFieldLabel: string;
+  AppLocalEnvironmentSharePoint: string;
+  AppLocalEnvironmentTeams: string;
+  AppSharePointEnvironment: string;
+  AppTeamsTabEnvironment: string;
+
   TilesListDescription: string;
   TileHeight: string;
   iconInformation: string;

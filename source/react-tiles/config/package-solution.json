@@ -5,34 +5,7 @@
     "id": "b0c8359d-6380-4b12-baba-c79e4fd5f179",
     "version": "2.0.0.0",
     "includeClientSideAssets": true,
-    "skipFeatureDeployment": true,
-    "isDomainIsolated": false,
-    "developer": {
-      "name": "",
-      "websiteUrl": "",
-      "privacyUrl": "",
-      "termsOfUseUrl": "",
-      "mpnId": "Undefined-1.14.0-rc.2"
-    },
-    "metadata": {
-      "shortDescription": {
-        "default": "react-tiles description"
-      },
-      "longDescription": {
-        "default": "react-tiles description"
-      },
-      "screenshotPaths": [],
-      "videoUrl": "",
-      "categories": []
-    },
-    "features": [
-      {
-        "title": "react-tiles Feature",
-        "description": "The feature that activates elements of the react-tiles solution.",
-        "id": "d82d7789-cade-4c8f-a2da-b80409eeee1e",
-        "version": "1.0.0.0"
-      }
-    ]
+    "skipFeatureDeployment": true
   },
   "paths": {
     "zippedPackage": "solution/react-tiles.sppkg"
